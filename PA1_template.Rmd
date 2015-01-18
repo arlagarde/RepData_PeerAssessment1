@@ -44,7 +44,7 @@ plot(dataInt,type="l")
 dataInt$interval[which(dataInt$steps==max(dataInt$steps))]
 ```
 
-The 5-minute interval, which on average across all the days in the dataset, contains the maximum number of steps is 835.
+The 5-minute interval, which on average across all the days in the dataset, contains the maximum number of steps is 835, or 8h35.
 
 Inputing missing values
 -----------------------
@@ -84,3 +84,5 @@ dataFill$we[which(dataFill$day<6)]<-"weekday"
 dataFillInt<-aggregate(steps~interval+we,data=dataFill,mean)
 xyplot(steps~interval|we,data=dataFillInt,type="l",scales=list(y=list(relation="free")),layout=c(1,2))
 ```
+
+We can conclude from the Graphs, that during the weekday most of the activity is during the morning, around the 8h35 peak, most likely when people go to work; during weekend the morning peak is a bit weaker, but activity is more equally distributed.
